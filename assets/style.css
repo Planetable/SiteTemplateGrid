@@ -19,6 +19,7 @@
     --breadcrumb-border-color: rgba(255, 255, 255, 0.7);
     --monospace: "Lucida Console", Consolas, "Courier", monospace;
     --code-background-color: #f8f8f8;
+    --grid-item-hover-background-color: #f8f8f8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +37,7 @@
         --breadcrumb-background-color: rgba(32, 32, 34, 0.8);
         --breadcrumb-border-color: rgba(32, 32, 34, 0.7);
         --code-background-color: #2b2b2d;
+        --grid-item-hover-background-color: #2b2b2d;
     }
 }
 
@@ -108,7 +110,7 @@ h2 {
 
 .content img {
     display: block;
-    max-width: 100%;
+    max-width: var(--content-max-width);
     margin: 40px auto 40px auto;
 }
 
@@ -208,36 +210,57 @@ hr {
 }
 
 .items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 100%;
 }
 
 .item {
+    aspect-ratio: 1/1;
+    transition: all 150ms ease-in;
+    padding: 10px;
+    border-radius: 2px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: var(--item-gap);
-}
-
-.item-title {
-    font-size: 1.25em;
-    font-weight: 500;
-    line-height: var(--title-line-height);
-    text-align: left;
-}
-
-.item-info {
-    display: flex;
-    gap: 10px;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.item-date {
+.item:hover {
+    padding: 8px;
+    background-color: var(--grid-item-hover-background-color);
+}
+
+.item a:link, .item a:visited, .item a:active {
+    display: block;
+    width: 100%;
+}
+
+.item .item-title {
+    display: block;
+    line-break: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5em;
+    line-height: 150%;
+    text-align: center;
+}
+
+.item .item-info {
+    display: block;
     font-size: 0.8em;
     color: var(--foreground-secondary-color);
-    text-align: left;
-    display: inline-block;
+    text-align: center;
+}
+
+.item img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    width: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 .item-video-icon, .item-audio-icon {
@@ -371,6 +394,16 @@ li:has(input[type="checkbox"]) {
 
     .breadcrumb-inner {
         padding: 0px 20px 0px 20px;
+    }
+
+    .item .item-title {
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .item .item-title {
+        font-size: 1.1em;
     }
 }
 

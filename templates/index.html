@@ -54,13 +54,13 @@
 <div class="items">
   {% for article in articles %}
   <div class="item">
-    <div class="item-title"><a href=".{{ article.link }}">{{ article.title|escape }}</a></div>
-    <div class="item-info">
-      <div class="item-date">{{ article.created|ymd }}</div>
-      {% if article.hasVideo %}<img src="{{ assets_prefix }}assets/video.svg" width="1em" class="item-video-icon" alt="Video">{% endif %}
-      {% if article.hasAudio %}<img src="{{ assets_prefix }}assets/microphone.svg" width="1em" class="item-audio-icon" alt="Video">{% endif %}
+    {% if article.heroImage %}
+    <a href="/{{ article.id }}/"><img src="{{ article.id }}/{{ article.heroImage }}" alt="{{ article.title|escape }}"></a>
+    {% else %}
+    <a href="/{{ article.id }}/"><span class="item-title">{{ article.title|escape }}</span></a>
+    <span class="item-info">{{ article.created|ymd }}</span>
+    {% endif %}
     </div>
-  </div>
   {% endfor %}
 </div>
 {% endblock %}

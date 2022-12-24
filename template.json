@@ -1,7 +1,7 @@
 {
-    "name": "Plain",
-    "description": "A plain template for Planet",
+    "name": "Grid",
+    "description": "A template that is specially optimized for pictures",
     "author": "Planetable Team",
     "authorWebsite": "https://planetable.xyz",
-    "version": "1.3.8"
+    "version": "1.0.0"
 }
