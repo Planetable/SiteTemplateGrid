@@ -19,7 +19,8 @@
     --breadcrumb-border-color: rgba(255, 255, 255, 0.7);
     --monospace: "Lucida Console", Consolas, "Courier", monospace;
     --code-background-color: #f8f8f8;
-    --grid-item-hover-background-color: #f8f8f8;
+    --grid-item-background-color: #fafafa;
+    --grid-item-hover-background-color: #f5f5f5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +38,7 @@
         --breadcrumb-background-color: rgba(32, 32, 34, 0.8);
         --breadcrumb-border-color: rgba(32, 32, 34, 0.7);
         --code-background-color: #2b2b2d;
+        --grid-item-background-color: #29292b;
         --grid-item-hover-background-color: #2b2b2d;
     }
 }
@@ -110,7 +112,7 @@ h2 {
 
 .content img {
     display: block;
-    max-width: var(--content-max-width);
+    max-width: 100%;
     margin: 40px auto 40px auto;
 }
 
@@ -212,24 +214,24 @@ hr {
 .items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    gap: 8px;
     max-width: 100%;
 }
 
 .item {
     aspect-ratio: 1/1;
     transition: all 150ms ease-in;
-    padding: 10px;
+    padding: 0px;
     border-radius: 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    background-color: var(--grid-item-background-color);
 }
 
 .item:hover {
-    padding: 8px;
     background-color: var(--grid-item-hover-background-color);
 }
 
@@ -257,7 +259,7 @@ hr {
 
 .item img {
     aspect-ratio: 1/1;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     max-height: 100%;
     display: block;
@@ -384,6 +386,18 @@ li:has(input[type="checkbox"]) {
     margin-left: 0px;
 }
 
+@media screen and (min-width: 700px) {
+    .content img {
+        max-width: calc(100% - 100px);
+    }
+}
+
+@media screen and (width: 800px) {
+    .content img {
+        max-width: calc(100% - 60px);
+    }
+}
+
 @media screen and (max-width: 768px) {
     :root {
         --item-gap: 15px;
@@ -402,8 +416,24 @@ li:has(input[type="checkbox"]) {
 }
 
 @media screen and (max-width: 428px) {
+    .items {
+        gap: 2px;
+    }
+
     .item .item-title {
         font-size: 1.1em;
+        line-height: 100%;
+        line-break: anywhere;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .items {
+        gap: 2px;
+    }
+
+    .item .item-title {
+        font-size: 1em;
     }
 }
 
