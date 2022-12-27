@@ -1,7 +1,8 @@
 {
-    "name": "Grid",
-    "description": "A template that is specially optimized for pictures",
-    "author": "Planetable Team",
-    "authorWebsite": "https://planetable.xyz",
-    "version": "1.0.2"
+  "name": "Grid",
+  "description": "A template that is specially optimized for pictures",
+  "author": "Planetable Team",
+  "authorWebsite": "https://planetable.xyz",
+  "version": "1.0.2",
+  "buildNumber": 77
 }
