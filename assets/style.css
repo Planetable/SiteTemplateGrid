@@ -257,12 +257,40 @@ hr {
     text-align: center;
 }
 
-.item img {
+.item .item-inner {
     aspect-ratio: 1/1;
-    object-fit: cover;
+    background-size: cover;
+    background-position: 50% 50%;
     width: 100%;
     max-height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 1px;
+}
+
+.overlay-icon {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+    z-index: 2;
     display: block;
+    opacity: 0.85;
+    margin-top: 8px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.overlay-icon.video-icon {
+    background-image: url("overlay/video.png");
+}
+
+.overlay-icon.audio-icon {
+    background-image: url("overlay/audio.png");
+}
+
+.overlay-icon.multi-icon {
+    background-image: url("overlay/multi.png");
 }
 
 .item-video-icon, .item-audio-icon {
@@ -424,6 +452,14 @@ li:has(input[type="checkbox"]) {
         font-size: 1.1em;
         line-height: 100%;
         line-break: anywhere;
+    }
+
+    .overlay-icon {
+        width: 24px;
+        height: 24px;
+        background-size: 24px 24px;
+        margin-top: 4px;
+        margin-right: 4px;
     }
 }
 
