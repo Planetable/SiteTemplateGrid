@@ -11,6 +11,7 @@
     --chevron-color: #333;
     --site-title-font-size: 2.5em;
     --h1-font-size: 2em;
+    --main-padding: 20px;
     --item-gap: 30px;
     --inner-gap: 20px;
     --title-line-height: 1.2;
@@ -170,7 +171,7 @@ hr {
 .main {
     max-width: calc(800px - env(safe-area-inset-left) - env(safe-area-inset-left));
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--main-padding);
     color: var(--foreground-color);
 }
 
@@ -214,8 +215,8 @@ hr {
 
 .items-outer {
     max-width: calc(800px - env(safe-area-inset-left) - env(safe-area-inset-left));
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0 auto calc(env(safe-area-inset-bottom) + var(--grid-item-gap)) auto;
+    padding: var(--main-padding);
 }
 
 .items {
@@ -442,7 +443,7 @@ li:has(input[type="checkbox"]) {
     }
 
     .breadcrumb-inner {
-        padding: 0px 20px 0px 20px;
+        padding: 0px var(--main-padding) 0px var(--main-padding);
     }
 
     .item .item-title {
@@ -453,10 +454,7 @@ li:has(input[type="checkbox"]) {
 @media screen and (max-width: 428px) {
     :root {
         --grid-item-gap: 2px;
-    }
-
-    .main {
-        padding: 10px;
+        --main-padding: 16px;
     }
 
     .top {
@@ -529,4 +527,5 @@ footer {
     max-width: var(--content-max-width);
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: env(safe-area-inset-bottom);
 }
