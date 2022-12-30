@@ -21,6 +21,7 @@
     --code-background-color: #f8f8f8;
     --grid-item-background-color: #fafafa;
     --grid-item-hover-background-color: #f5f5f5;
+    --grid-item-gap: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -211,10 +212,16 @@ hr {
     margin-bottom: 0px;
 }
 
+.items-outer {
+    max-width: calc(800px - env(safe-area-inset-left) - env(safe-area-inset-left));
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: var(--grid-item-gap);
     max-width: 100%;
 }
 
@@ -357,7 +364,7 @@ img.avatar {
     gap: 16px;
     padding: 2px;
     box-sizing: border-box;
-    margin: 0px auto 40px auto;
+    margin: 0px auto 0px auto;
     align-items: center;
 }
 
@@ -444,8 +451,25 @@ li:has(input[type="checkbox"]) {
 }
 
 @media screen and (max-width: 428px) {
+    :root {
+        --grid-item-gap: 2px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .top {
+        margin-bottom: 20px;
+    }
+
+    .items-outer {
+        padding: 0px;
+        width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-left));
+    }
+
     .items {
-        gap: 2px;
+        padding: var(--grid-item-gap);
     }
 
     .item .item-title {
@@ -464,10 +488,6 @@ li:has(input[type="checkbox"]) {
 }
 
 @media screen and (max-width: 320px) {
-    .items {
-        gap: 2px;
-    }
-
     .item .item-title {
         font-size: 1em;
     }

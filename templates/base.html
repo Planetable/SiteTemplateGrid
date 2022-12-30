@@ -77,10 +77,14 @@
       <div class="main">
       {% block main %}
       {% endblock %}
+      {% block footer %}
         <footer id="footer" style="display: none;"><div class="footer-inner">
           Powered by <a href="https://www.planetable.xyz/">Planet</a>
         </div></footer>
+      {% endblock %}
       </div>
+      {% block aftermain %}
+      {% endblock %}
     </div>
     {% if custom_code_body_end.count > 0 %}{{ custom_code_body_end }}{% endif %}
   </body>
