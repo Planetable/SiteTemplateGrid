@@ -55,7 +55,7 @@
   {% for article in articles %}
   <div class="item">
     {% if article.heroImage %}
-    <a href="/{{ article.id }}/"><div class="item-inner" style='background-image: url("{{ article.id }}/{{ article.heroImage|escape }}")'>
+    <a href="/{{ article.id }}/"><div class="item-inner" style='background-image: url("{{ article.id }}/_grid.png")'>
       {% if article.hasVideo %}
       <div class="overlay-icon video-icon"></div>
       {% else %}
