@@ -424,24 +424,16 @@ li:has(input[type="checkbox"]) {
     margin-left: 0px;
 }
 
-@media screen and (min-width: 801px) {
-    .content img {
-        max-width: calc(100% - 100px);
-    }
-}
-
-@media screen and (width: 800px) {
-    .content img {
-        max-width: calc(100% - 60px);
-    }
-}
-
 @media screen and (max-width: 768px) {
     :root {
         --item-gap: 15px;
         --inner-gap: 10px;
         --site-title-font-size: 2em;
         --h1-font-size: 1.75em;
+    }
+
+    .content img {
+        max-width: 100%;
     }
 
     .breadcrumb-inner {
