@@ -114,7 +114,7 @@ h2 {
 
 .content img {
     display: block;
-    max-width: 100%;
+    max-width: var(--content-max-width);
     margin: 40px auto 40px auto;
 }
 
@@ -315,12 +315,14 @@ hr {
 }
 
 .video-container {
-    width: 100%;
+    max-width: var(--content-max-width);
     padding-top: 56.25%;
     height: 0px;
     position: relative;
     border-radius: 2px;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .video {
@@ -422,7 +424,7 @@ li:has(input[type="checkbox"]) {
     margin-left: 0px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 801px) {
     .content img {
         max-width: calc(100% - 100px);
     }
