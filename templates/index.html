@@ -57,7 +57,7 @@
   {% for article in articles %}
   <div class="item">
     {% if article.heroImage %}
-    <a href="/{{ article.id }}/"><div class="item-inner" style='background-image: url("{{ article.id }}/_grid.jpg")'>
+    <a href="{{ article.id }}/"><div class="item-inner" style='background-image: url("{{ article.id }}/_grid.jpg")'>
       {% if article.hasVideo %}
       <div class="overlay-icon video-icon"></div>
       {% else %}
@@ -71,7 +71,7 @@
       {% endif %}
     </div></a>
     {% else %}
-    <a href="/{{ article.id }}/"><span class="item-title">{{ article.title|escape }}</span></a>
+    <a href="{{ article.id }}/"><span class="item-title">{{ article.title|escape }}</span></a>
     <span class="item-info">{{ article.created|ymd }}</span>
     {% endif %}
     </div>
