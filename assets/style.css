@@ -358,6 +358,23 @@ img.avatar {
     padding: 10px;
 }
 
+.pages-container {
+    display: flex;
+    align-items: center;
+    max-width: calc(800px - env(safe-area-inset-left) - env(safe-area-inset-left));
+    margin: 10px auto calc(env(safe-area-inset-bottom) + var(--grid-item-gap)) auto;
+    padding: var(--main-padding);
+}
+
+.pages-info {
+    flex: 1;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--foreground-secondary-color);
+    font-weight: 500;
+    font-size: 12px;
+}
+
 .nav-container {
     text-align: left;
 }
@@ -383,6 +400,7 @@ img.avatar {
 
 .nav-current:hover {
     text-decoration: none;
+    background-color: var(--link-color);
 }
 
 .nav-item:link, .nav-item:visited {

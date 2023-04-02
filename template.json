@@ -3,6 +3,7 @@
   "description": "A template that is specially optimized for pictures",
   "author": "Planetable Team",
   "authorWebsite": "https://planetable.xyz",
-  "version": "1.0.13",
+  "version": "1.1.0",
+  "idealItemsPerPage": 12,
   "buildNumber": 87
 }
