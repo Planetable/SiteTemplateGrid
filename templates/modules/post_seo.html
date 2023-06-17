@@ -16,6 +16,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 {% if planet.twitterUsername.count > 0 %}
   <meta name="twitter:site" content="@{{ planet.twitterUsername|escape }}" />
+  <meta name="twitter:creator" content="@{{ planet.twitterUsername|escape }}" />
 {% endif %}
 <meta name="twitter:title" content="{{ article.title|escape }}" />
 <meta name="twitter:description" content="{{ article_summary|escape }}" />
