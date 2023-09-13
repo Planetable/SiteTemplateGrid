@@ -20,6 +20,7 @@
 {% block main %}
 <h1>{{ article.title|escape }}</h1>
 <div class="date">{{ article.created|formatDate }}</div>
+{% include 'modules/article_tags.html' %}
 <div class="content">
   {% if article.hasVideo %}
   <div class="video-container">

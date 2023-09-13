@@ -386,6 +386,7 @@ img.avatar {
     box-sizing: border-box;
     margin: 0px auto 0px auto;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-current:link, .nav-current:visited {
@@ -442,6 +443,147 @@ li:has(input[type="checkbox"]) {
     margin-left: 0px;
 }
 
+.tag-container {
+    margin: 20px auto 20px auto;
+    max-width: calc(100% - 20px);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.tag-caption {
+    font-size: 0.8em;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.tag-title {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.tag-count {
+    font-size: 0.8em;
+    color: var(--foreground-secondary-color);
+}
+
+.tags-container {
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 0.8em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    color: var(--foreground-secondary-color);
+    align-items: center;
+}
+
+.tags {
+    flex: 1;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.tag-cloud {
+    max-width: calc(100% - 20px);
+    margin: 0px auto 0px auto;
+    column-count: 3;
+    column-rule: 1px solid var(--border-color);
+    column-gap: 20px;
+    line-height: 2;
+}
+
+.tag-cloud-item {
+    display: block;
+    font-size: 1em;
+}
+
+.tag-cloud-item-count {
+    display: inline-block;
+    background-color: var(--border-color);
+    font-size: 0.75em;
+    color: var(--background-color);
+    padding: 1px 4px 1px 4px;
+    border-radius: 20px;
+    line-height: 1;
+    vertical-align: middle;
+    margin-left: 0.5em;
+}
+
+.tag-item {
+    display: inline-block;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.tag-item:hover {
+    text-decoration: none;
+    border-color: var(--link-color);
+    box-shadow: 0px 1px 2px var(--border-color);
+}
+
+.archive-container {
+    margin: 20px auto 20px auto;
+    max-width: calc(100% - 20px);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.archive-title {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.archive-count {
+    font-size: 0.8em;
+    color: var(--foreground-secondary-color);
+}
+
+.archive-list {
+    margin: 20px auto 20px auto;
+    max-width: calc(100% - 20px);
+    column-count: 3;
+    column-rule: 1px solid var(--border-color);
+    column-gap: 20px;
+    line-height: 1.2;
+}
+
+.archive-list-item {
+    display: block;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 10px;
+}
+
+.archive-list-header {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: var(--foreground-secondary-color);
+}
+
+.archive-list-header:first-child {
+    margin-top: 0px;
+}
+
+.archive-list-item a {
+    line-break: initial;
+}
+
 @media screen and (max-width: 768px) {
     :root {
         --item-gap: 15px;
@@ -460,6 +602,10 @@ li:has(input[type="checkbox"]) {
 
     .item .item-title {
         font-size: 1.25em;
+    }
+
+    .tag-cloud, .archive-list {
+        column-count: 2;
     }
 }
 
@@ -494,6 +640,10 @@ li:has(input[type="checkbox"]) {
         background-size: 24px 24px;
         margin-top: 4px;
         margin-right: 4px;
+    }
+
+    .archive-list {
+        column-count: 1;
     }
 }
 
