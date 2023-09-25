@@ -429,8 +429,10 @@ img.avatar {
 }
 
 .nextprev {
-    width: 96px;
+    width: 100px;
     text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .nav-item:hover {
