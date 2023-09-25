@@ -40,11 +40,15 @@
 </div></div>
 <div class="pages-container">
   {% if previous_page %}
-  <a href="./{{ previous_page }}" class="nav-current">Previous Page</a>
+  <a href="./{{ previous_page }}" class="nav-current nextprev">Prev Page</a>
+  {% else %}
+  <span class="nextprev"></span>
   {% endif %}
-  <div class="pages-info">Page {{ current_page }} of {{ total_pages }}</div>
+  <div class="pages-info">{% if total_pages > 1 %}Page {{ current_page }} of {{ total_pages }}{% endif %}</div>
   {% if next_page %}
-  <a href="./{{ next_page }}" class="nav-current">Next Page</a>
+  <a href="./{{ next_page }}" class="nav-current nextprev">Next Page</a>
+  {% else %}
+  <span class="nextprev"></span>
   {% endif %}
 </div>
 {% endblock %}

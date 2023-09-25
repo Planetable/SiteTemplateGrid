@@ -23,6 +23,14 @@
         let inner = document.createElement('div');
         inner.classList.add('breadcrumb-inner');
         container.appendChild(inner);
+        {% if has_avatar %}
+        let avatarHTML = `
+          <div class="breadcrumb-avatar">
+            <a href="{{ assets_prefix }}"><img src="{{ assets_prefix }}avatar.png" height="16" class="breadcrumb-avatar-image" border="0" /></a>
+          </div>
+        `;
+        inner.innerHTML = avatarHTML;
+        {% endif %}
         if (!stubs || !stubs.length) {
           return;
         }
