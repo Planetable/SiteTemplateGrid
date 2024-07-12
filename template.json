@@ -3,10 +3,10 @@
   "description": "A template that is specially optimized for pictures",
   "author": "Planetable Team",
   "authorWebsite": "https://planetable.xyz",
-  "version": "1.3.3",
+  "version": "1.4",
   "idealItemsPerPage": 12,
   "generateIndexPagination": true,
   "generateTagPages": true,
   "generateArchive": true,
-  "buildNumber": 98
+  "buildNumber": 99
 }
